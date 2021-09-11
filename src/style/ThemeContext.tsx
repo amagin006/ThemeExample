@@ -1,12 +1,15 @@
 import React from 'react';
-import {DEFAULT_DARK_THEME} from './DefaultDark';
-import {DEFAULT_LIGHT_THEME} from './DefaultLight';
+import {
+  DEFAULT_DARK_THEME,
+  DEFAULT_LIGHT_THEME,
+  DEFAULT_ORANGE_THEME,
+} from './type';
 import {Theme, EThemeID} from './type';
 
 // Our context provider will provide this object shape
 export interface ProvidedValue {
   theme: Theme;
-  toggleTheme: () => void;
+  toggleTheme: (id?: EThemeID) => void;
 }
 
 // Creating our context
@@ -35,15 +38,22 @@ export const ThemeProvider = React.memo<ThemeProviderProps>(props => {
   const [theme, setTheme] = React.useState<Theme>(props.initial);
   // Implement a method for toggling the Theme
   // We're using the React.useCallback hook for optimization
-  const ToggleThemeCallback = React.useCallback(() => {
+  const ToggleThemeCallback = React.useCallback((id?: EThemeID) => {
     setTheme(currentTheme => {
-      if (currentTheme.id === EThemeID.DEFAULT_LIGHT_THEME_ID) {
-        return DEFAULT_DARK_THEME;
+      if (currentTheme.id === id || !id) {
+        return currentTheme;
       }
-      if (currentTheme.id === EThemeID.DEFAULT_DARK_THEME_ID) {
-        return DEFAULT_LIGHT_THEME;
+      console.log('changeTheme', id);
+      switch (id) {
+        case EThemeID.DEFAULT_LIGHT_THEME_ID:
+          return DEFAULT_LIGHT_THEME;
+        case EThemeID.DEFAULT_DARK_THEME_ID:
+          return DEFAULT_DARK_THEME;
+        case EThemeID.DEFAULT_ORANGE_THEME_ID:
+          return DEFAULT_ORANGE_THEME;
+        default:
+          return DEFAULT_LIGHT_THEME;
       }
-      return currentTheme;
     });
   }, []);
   // Building up the provided object

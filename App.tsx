@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {DEFAULT_LIGHT_THEME} from './src/style/DefaultLight';
+import {DEFAULT_LIGHT_THEME} from './src/style/type';
 import {ThemeProvider} from './src/style/ThemeContext';
 
 import {RootStack} from './src/RootStack';

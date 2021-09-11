@@ -1,4 +1,4 @@
-import {SpacingTheme} from './type';
+import {SpacingTheme} from '../type';
 
 export const DEFAULT_SPACING_THEME: SpacingTheme = {
   base: 6,

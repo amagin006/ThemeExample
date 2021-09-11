@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {useThemeAwareObject} from './style/ThemeHooks';
-import {Theme} from './style/type';
+import {useThemeAwareObject} from '../style/ThemeHooks';
+import {Theme} from '../style/type';
 
 export const ScreenTwo: React.FC<{navigation: any}> = props => {
-  const {styles, toggleTheme} = useThemeAwareObject(createStyles);
+  const {styles} = useThemeAwareObject(createStyles);
 
   return (
     <View style={styles.container}>
@@ -12,11 +12,7 @@ export const ScreenTwo: React.FC<{navigation: any}> = props => {
       <TouchableOpacity onPress={() => props.navigation.navigate('one')}>
         <Text style={styles.linkStyle}>Go to One</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={toggleTheme}>
-        <View style={styles.buttonWrapper}>
-          <Text style={styles.linkStyle}>Change Light Theme</Text>
-        </View>
-      </TouchableOpacity>
+      <View style={styles.cricle} />
     </View>
   );
 };
@@ -47,6 +43,13 @@ const createStyles = (theme: Theme) => {
       paddingVertical: theme.spacing.base_12,
       paddingHorizontal: theme.spacing.base_20,
       borderRadius: 14,
+    },
+    cricle: {
+      width: 60,
+      height: 60,
+      borderRadius: 30,
+      backgroundColor: theme.color.Palette.onPrimary,
+      marginTop: theme.spacing.base_20,
     },
   });
   return styles;
