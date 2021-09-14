@@ -23,7 +23,7 @@ export const ScreenTwo: React.FC<{navigation: any}> = props => {
 const createStyles = (theme: Theme) => {
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: theme.color.Palette.baseBackground,
+      backgroundColor: theme.color.background.Primary,
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
@@ -34,7 +34,7 @@ const createStyles = (theme: Theme) => {
     },
     linkStyle: {
       fontSize: 20,
-      color: theme.color.Palette.onSurface,
+      color: theme.color.Text.linkPrimary,
       textDecorationLine: 'underline',
       marginVertical: theme.spacing.base_12,
     },
@@ -48,7 +48,7 @@ const createStyles = (theme: Theme) => {
       width: 60,
       height: 60,
       borderRadius: 30,
-      backgroundColor: theme.color.Palette.onPrimary,
+      backgroundColor: theme.color.background.Secondary,
       marginTop: theme.spacing.base_20,
     },
   });

@@ -39,7 +39,7 @@ export const ScreenOne: React.FC<{navigation: any}> = ({navigation}) => {
 const createStyles = (theme: Theme) => {
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: theme.color.Palette.baseBackground,
+      backgroundColor: theme.color.background.Primary,
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
@@ -50,7 +50,7 @@ const createStyles = (theme: Theme) => {
     },
     linkStyle: {
       fontSize: 20,
-      color: theme.color.Palette.onSurface,
+      color: theme.color.Text.linkPrimary,
       textDecorationLine: 'underline',
       marginVertical: theme.spacing.base_12,
     },

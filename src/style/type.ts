@@ -8,12 +8,12 @@ export interface ColorPalette {
   onPrimary: string;
   surface: string;
   onSurface: string;
-  baseBackground: string;
 
   Attention: string;
   AttentionRed: string;
 
   BaseGray: string;
+  DarkGray: string;
   BaseGreen: string;
   BasePurple: string;
   BaseBlue: string;
@@ -28,8 +28,13 @@ export interface ColorPalette {
 }
 
 export interface ColorTheme {
+  background: {
+    Primary: string;
+    Secondary: string;
+  };
   Text: {
     primary: string;
+    linkPrimary: string;
   };
   ButtonAtom: {
     PrimaryBackGround: string;

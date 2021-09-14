@@ -3,8 +3,13 @@ import {Palette} from './Palette';
 
 // Define our light theme colors
 export const DEFAULT_ORANGE_COLOR_THEME: ColorTheme = {
+  background: {
+    Primary: Palette.BaseOrange,
+    Secondary: Palette.black,
+  },
   Text: {
-    primary: Palette.BaseOrange,
+    primary: Palette.LightPurple,
+    linkPrimary: Palette.onSurface,
   },
   ButtonAtom: {
     PrimaryBackGround: Palette.SecondaryOrange,
