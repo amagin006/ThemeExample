@@ -36,9 +36,12 @@ interface ThemeProviderProps {
 export const ThemeProvider = React.memo<ThemeProviderProps>(props => {
   // Store the actual theme as an internal state of the provider
   const [theme, setTheme] = React.useState<Theme>(props.initial);
+
   // Implement a method for toggling the Theme
   // We're using the React.useCallback hook for optimization
   const ToggleThemeCallback = React.useCallback((id?: EThemeID) => {
+    // TODO: We can use AsyncStorage if it needs to persist the theme.
+    //       And Get Device setting to get inital Theme Dark or Light if need.
     setTheme(currentTheme => {
       if (currentTheme.id === id || !id) {
         return currentTheme;
