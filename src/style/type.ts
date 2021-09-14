@@ -3,17 +3,31 @@ import {DEFAULT_LIGHT_COLOR_THEME} from './color/DefaultLight';
 import {DEFAULT_ORANGE_COLOR_THEME} from './color/DefaultOrange';
 import {DEFAULT_SPACING_THEME} from './space/DefaultSpacing';
 
-export interface ColorTheme {
-  Palette: {
-    primary: string;
-    onPrimary: string;
-    surface: string;
-    onSurface: string;
-    baseBackground: string;
+export interface ColorPalette {
+  primary: string;
+  onPrimary: string;
+  surface: string;
+  onSurface: string;
+  baseBackground: string;
 
-    white: string;
-    black: string;
-  };
+  Attention: string;
+  AttentionRed: string;
+
+  BaseGray: string;
+  BaseGreen: string;
+  BasePurple: string;
+  BaseBlue: string;
+  LightPurple: string;
+
+  BaseOrange: string;
+  SecondaryOrange: string;
+  LightOrange: string;
+
+  white: string;
+  black: string;
+}
+
+export interface ColorTheme {
   Text: {
     primary: string;
   };
