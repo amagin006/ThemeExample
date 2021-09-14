@@ -1,8 +1,8 @@
 import React from 'react';
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {ScreenOne} from './ScreenOne';
-import {ScreenTwo} from './ScreenTwo';
+import {ScreenOne} from './Screens/ScreenOne';
+import {ScreenTwo} from './Screens/ScreenTwo';
 
 // Stack Navigator
 const RootStackNav = createStackNavigator();
